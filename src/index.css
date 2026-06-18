@@ -1,0 +1,122 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+
+/* ------------------------------------------------------------------ */
+/*  Design tokens (Tailwind v4 @theme → generates color/font utilities) */
+/* ------------------------------------------------------------------ */
+@theme {
+  --font-sans: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica,
+    Arial, sans-serif;
+  --font-serif: var(--font-sans);
+
+  /* Brand palette — calm cream base, colour comes from photography */
+  --color-cream: #f7f3eb;
+  --color-cream-deep: #efe9dc;
+  --color-ink: #16150f;
+  --color-ink-soft: #3a382f;
+  --color-muted: #76736a;
+  --color-line: #1615100f;
+
+  /* Fruit accents (used sparingly) */
+  --color-berry: #d6324b;
+  --color-berry-deep: #a8203a;
+  --color-lime: #b2c73a;
+  --color-blueberry: #4a5bd4;
+  --color-plum: #7c3a8e;
+  --color-apricot: #f08a3c;
+
+  /* Dark hero surface */
+  --color-night: #100f0c;
+  --color-night-2: #1b1a15;
+
+  /* shadcn semantic tokens */
+  --color-background: var(--color-cream);
+  --color-foreground: var(--color-ink);
+  --color-card: #ffffff;
+  --color-card-foreground: var(--color-ink);
+  --color-muted-foreground: var(--color-muted);
+  --color-border: var(--color-line);
+  --color-ring: var(--color-berry);
+
+  --radius-lg: 1.25rem;
+
+  --animate-spotlight: spotlight 2.4s ease 0.4s 1 forwards;
+  --animate-marquee: marquee 32s linear infinite;
+}
+
+/* shadcn `border` utility expects the token colour by default */
+@layer base {
+  * {
+    border-color: var(--color-border);
+  }
+  html {
+    scroll-behavior: smooth;
+  }
+  body {
+    margin: 0;
+    background: var(--color-background);
+    color: var(--color-foreground);
+    font-family: var(--font-sans);
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+  }
+  ::selection {
+    background: var(--color-berry);
+    color: #fff;
+  }
+}
+
+/* ------------------------------------------------------------------ */
+/*  Demo variables required by the integrated component spec           */
+/* ------------------------------------------------------------------ */
+:root {
+  --demo-bg: #ffffff;
+  --demo-text: #1a1a1a;
+}
+
+/* ------------------------------------------------------------------ */
+/*  Keyframes                                                          */
+/* ------------------------------------------------------------------ */
+@keyframes spotlight {
+  0% {
+    opacity: 0;
+    transform: translate(-72%, -62%) scale(0.5);
+  }
+  100% {
+    opacity: 1;
+    transform: translate(-50%, -40%) scale(1);
+  }
+}
+
+@keyframes marquee {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+/* Spinner fallback used by the Spline component */
+.loader {
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  border: 3px solid rgba(255, 255, 255, 0.18);
+  border-top-color: var(--color-lime);
+  animation: spin 0.9s linear infinite;
+}
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* Hide scrollbar for horizontal strips */
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
