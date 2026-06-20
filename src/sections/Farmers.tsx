@@ -1,52 +1,74 @@
-import { MapPin } from "lucide-react";
-import { farmers, img } from "@/data/catalog";
+import { Calendar, Sprout, Leaf, Truck } from "lucide-react";
+import { farm, img } from "@/data/catalog";
 import { Container, Eyebrow, Reveal } from "@/components/primitives";
+
+const factIcons = [Calendar, Sprout, Leaf, Truck];
 
 export function Farmers() {
   return (
-    <section id="farmers" className="scroll-mt-20 py-14 md:py-24">
-      <Container>
-        <Reveal className="mb-9 max-w-xl md:mb-14">
-          <Eyebrow>Прозрачность</Eyebrow>
-          <h2 className="mt-4 text-3xl font-bold leading-tight tracking-tight md:text-5xl">
-            Знай своего фермера
-          </h2>
-          <p className="mt-5 text-[15px] leading-relaxed text-ink-soft md:text-base">
-            За каждой корзиной — реальные люди и хозяйства. Мы лично знакомы с
-            каждым и проверяем поля.
-          </p>
+    <section id="about" className="scroll-mt-20 py-14 md:py-24">
+      <Container className="grid items-center gap-10 md:grid-cols-2 md:gap-16">
+        {/* visuals */}
+        <Reveal>
+          <div className="grid grid-cols-2 gap-3">
+            <div className="col-span-2 aspect-[16/10] overflow-hidden rounded-2xl">
+              <img
+                src={img(farm.gallery[0], 1000, 620)}
+                alt="Наши поля и сады"
+                loading="lazy"
+                className="h-full w-full object-cover"
+              />
+            </div>
+            <div className="aspect-square overflow-hidden rounded-2xl">
+              <img
+                src={img(farm.gallery[1], 500, 500)}
+                alt="Сбор урожая"
+                loading="lazy"
+                className="h-full w-full object-cover"
+              />
+            </div>
+            <div className="aspect-square overflow-hidden rounded-2xl">
+              <img
+                src={img(farm.gallery[2], 500, 500)}
+                alt="Наша команда"
+                loading="lazy"
+                className="h-full w-full object-cover"
+              />
+            </div>
+          </div>
         </Reveal>
 
-        <div className="grid gap-4 sm:grid-cols-2 md:grid-cols-3 md:gap-6">
-          {farmers.map((f, i) => (
-            <Reveal key={f.name} delay={i * 0.08}>
-              <article className="group overflow-hidden rounded-[1.4rem] border border-line bg-card">
-                <div className="aspect-[4/3] overflow-hidden">
-                  <img
-                    src={img(f.photo, 800, 600)}
-                    alt={f.name}
-                    loading="lazy"
-                    className="h-full w-full object-cover transition-transform duration-700 ease-out group-hover:scale-105"
-                  />
-                </div>
-                <div className="p-5 md:p-6">
-                  <div className="flex items-center justify-between gap-2">
-                    <h3 className="text-lg font-bold text-ink">{f.name}</h3>
-                    <span className="rounded-full bg-cream-deep px-2.5 py-1 text-[11px] font-semibold text-ink-soft">
-                      {f.since}
-                    </span>
+        {/* content */}
+        <div>
+          <Reveal>
+            <Eyebrow>Наше хозяйство</Eyebrow>
+            <h2 className="mt-4 text-3xl font-bold leading-tight tracking-tight md:text-5xl">
+              Один совхоз — всё своё
+            </h2>
+            <p className="mt-5 max-w-md text-[15px] leading-relaxed text-ink-soft md:text-base">
+              «СПЕЛО» — не маркетплейс. Это наше собственное хозяйство в
+              Лесной Поляне, Самарская область: свои поля, сады и теплицы. Мы
+              сами растим, сами собираем и сами привозим — поэтому отвечаем за
+              каждую ягоду.
+            </p>
+          </Reveal>
+
+          <div className="mt-9 grid grid-cols-2 gap-4">
+            {farm.facts.map((f, i) => {
+              const Icon = factIcons[i];
+              return (
+                <Reveal key={f.label} delay={i * 0.06}>
+                  <div className="rounded-2xl border border-line bg-card p-5">
+                    <Icon className="h-5 w-5 text-berry" strokeWidth={1.8} />
+                    <div className="mt-3 text-xl font-extrabold text-ink">
+                      {f.value}
+                    </div>
+                    <div className="mt-0.5 text-[13px] text-muted">{f.label}</div>
                   </div>
-                  <p className="mt-2 flex items-center gap-1.5 text-[13px] text-muted">
-                    <MapPin className="h-3.5 w-3.5" strokeWidth={1.8} />
-                    {f.region}
-                  </p>
-                  <p className="mt-3 inline-block rounded-full border border-line px-3 py-1 text-[13px] font-medium text-ink">
-                    {f.crop}
-                  </p>
-                </div>
-              </article>
-            </Reveal>
-          ))}
+                </Reveal>
+              );
+            })}
+          </div>
         </div>
       </Container>
     </section>

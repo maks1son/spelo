@@ -6,7 +6,7 @@ const nav = [
   { label: "Ягоды", href: "#catalog" },
   { label: "Боксы", href: "#subscription" },
   { label: "Сезон", href: "#season" },
-  { label: "Фермеры", href: "#farmers" },
+  { label: "Хозяйство", href: "#about" },
   { label: "Вопросы", href: "#faq" },
 ];
 

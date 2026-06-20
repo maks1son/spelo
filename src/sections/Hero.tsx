@@ -17,16 +17,16 @@ export function Hero() {
 
           <div className="relative z-10 flex min-h-[470px] flex-col justify-center px-6 py-14 sm:px-10 md:min-h-[620px] md:py-24 lg:px-16">
             <span className="text-[11px] font-semibold uppercase tracking-[0.24em] text-lime">
-              Фермерская лавка · лето 2026
+              Наш совхоз · урожай 2026
             </span>
 
             <h1 className="mt-5 max-w-2xl text-4xl font-bold leading-[1.04] tracking-tight text-white sm:text-5xl lg:text-[4rem]">
-              Спелые ягоды и фрукты с&nbsp;поля — к&nbsp;вашему столу
+              Спелые ягоды и фрукты с&nbsp;нашего поля — к&nbsp;вашему столу
             </h1>
 
             <p className="mt-6 max-w-md text-[15px] leading-relaxed text-white/75 md:text-base">
-              Напрямую от фермеров. Собираем на рассвете, держим холодную
-              цепочку и привозим к&nbsp;двери за&nbsp;24&nbsp;часа.
+              Выращиваем сами на своих полях. Собираем на рассвете, держим
+              холодную цепочку и привозим к&nbsp;двери за&nbsp;24&nbsp;часа.
             </p>
 
             <div className="mt-9 flex flex-wrap items-center gap-3">
@@ -53,7 +53,7 @@ export function Hero() {
               </div>
               <div className="h-4 w-px bg-white/25" />
               <span>
-                <span className="font-semibold text-white">40+</span> хозяйств
+                <span className="font-semibold text-white">120 га</span> своих полей
               </span>
             </div>
           </div>

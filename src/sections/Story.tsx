@@ -35,7 +35,7 @@ export function Story() {
               </h2>
               <p className="mt-5 max-w-md text-[15px] leading-relaxed text-ink-soft md:text-base">
                 Никаких складов и перекупщиков. Короткий путь, холодная цепочка
-                и честное имя фермера на каждой упаковке.
+                и честное имя нашего хозяйства на каждой упаковке.
               </p>
             </Reveal>
 

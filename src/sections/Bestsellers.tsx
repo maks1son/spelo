@@ -50,7 +50,7 @@ function ProductCard({ p }: { p: Product }) {
             {p.name}
           </h3>
           <p className="mt-0.5 truncate text-[13px] text-muted">
-            {p.farm} · {p.weight}
+            {p.note} · {p.weight}
           </p>
         </div>
         <div className="shrink-0 text-right">

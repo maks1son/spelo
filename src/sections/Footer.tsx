@@ -8,7 +8,7 @@ const columns = [
   },
   {
     title: "Компания",
-    links: ["О нас", "Фермеры", "Журнал", "Карьера", "Контакты"],
+    links: ["О хозяйстве", "Доставка", "Журнал", "Вакансии", "Контакты"],
   },
   {
     title: "Помощь",
@@ -105,7 +105,7 @@ export function Footer() {
       </div>
 
       <Container className="flex flex-col items-center justify-between gap-3 border-t border-cream/10 py-6 text-[13px] text-cream/45 sm:flex-row">
-        <span>© 2026 СПЕЛО — фермерская лавка</span>
+        <span>© 2026 СПЕЛО · Лесная Поляна, Самарская область</span>
         <div className="flex gap-6">
           <a href="#" className="transition-colors hover:text-cream/80">
             Политика конфиденциальности
